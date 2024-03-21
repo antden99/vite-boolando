@@ -1,20 +1,20 @@
 <script>
-    export default{
-        name:"AppFooter",
-    }
+export default {
+    name: "AppFooter",
+}
 </script>
 
 <template>
-<footer>
-    Footer
-</footer>
+    <footer>
+        Footer
+    </footer>
 
 </template>
 
 <style>
-footer{
+footer {
     height: 100px;
-    background-color: black;
+    background-color: #1a1a1a;
     color: white;
 }
 </style>

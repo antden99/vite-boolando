@@ -23,12 +23,13 @@ export default {
 body {
   background-color: white;
   color: black;
-  min-width: 320px;
   min-height: 100vh;
-  display: block;
+
 }
-#app{
-  margin: 0;
+
+*{
   padding: 0;
+  margin: 0;
 }
+
 </style>

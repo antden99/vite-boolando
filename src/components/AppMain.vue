@@ -1,18 +1,18 @@
 <script>
-    export default{
-        name:"AppMain",
-    }
+export default {
+    name: "AppMain",
+}
 </script>
 
 <template>
-<main>
-    Main
-</main>
+    <main>
+        Main
+    </main>
 
 </template>
 
 <style>
-main{
+main {
     height: calc(100vh - 200px)
 }
 </style>
