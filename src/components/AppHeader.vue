@@ -5,17 +5,17 @@ export default {
         return {
             strings: [
                 {
-                    nome:"Uomo"
+                    nome: "Uomo"
                 },
                 {
-                    nome:"Donna"
+                    nome: "Donna"
                 },
                 {
-                    nome:"Bambino"
+                    nome: "Bambino"
                 }
             ],
-            
-            icons:[
+
+            icons: [
                 {
                     icon: "fa-solid fa-user"
                 },
@@ -28,7 +28,7 @@ export default {
             ]
         }
     },
-   
+
 }
 </script>
 
@@ -42,7 +42,9 @@ export default {
                 <li><img src="/assets/img/boolean-logo.png" alt=""></li>
                 <li>
                     <ul>
-                        <li v-for="icon in icons"><i :class="icon.icon"></i></li>                    
+                        <li v-for="icon in icons">
+                            <i :class="icon.icon"></i>
+                        </li>
                     </ul>
                 </li>
             </nav>
