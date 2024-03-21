@@ -5,12 +5,14 @@
 </script>
 
 <template>
-<div>
-   Main
-</div>
+<main>
+    Main
+</main>
 
 </template>
 
 <style>
-
+main{
+    height: calc(100vh - 200px)
+}
 </style>

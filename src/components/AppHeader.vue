@@ -5,12 +5,15 @@
 </script>
 
 <template>
-<div>
+<header>
     Header
-</div>
+</header>
 
 </template>
 
 <style>
-
+header{
+    background-color: blueviolet;
+    height: 100px;
+}
 </style>

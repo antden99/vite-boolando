@@ -5,12 +5,16 @@
 </script>
 
 <template>
-<div>
-   Footer
-</div>
+<footer>
+    Footer
+</footer>
 
 </template>
 
 <style>
-
+footer{
+    height: 100px;
+    background-color: black;
+    color: white;
+}
 </style>

@@ -1,27 +1,34 @@
-<script >
-  import AppFooter from './components/AppFooter.vue'
-  import AppMain from './components/AppMain.vue'
-  import AppHeader from './components/AppHeader.vue'
+<script>
+import AppFooter from './components/AppFooter.vue'
+import AppMain from './components/AppMain.vue'
+import AppHeader from './components/AppHeader.vue'
 
 
-  export default{
-    components:{
-      AppFooter:AppFooter,
-      AppMain:AppMain,
-      AppHeader:AppHeader,
-    }
+export default {
+  components: {
+    AppFooter: AppFooter,
+    AppMain: AppMain,
+    AppHeader: AppHeader,
   }
+}
 </script>
 
 <template>
-  <AppHeader/>
-  <AppMain/>
-  <AppFooter/>
+  <AppHeader />
+  <AppMain />
+  <AppFooter />
 </template>
 
-<style >
-body{
+<style>
+body {
   background-color: white;
   color: black;
+  min-width: 320px;
+  min-height: 100vh;
+  display: block;
+}
+#app{
+  margin: 0;
+  padding: 0;
 }
 </style>
