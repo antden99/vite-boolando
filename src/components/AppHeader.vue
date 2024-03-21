@@ -25,6 +25,7 @@ export default {
 header {
     background-color: #ff6900;
     height: 100px;
+    z-index: 1;
 }
 
 .container {
@@ -36,7 +37,6 @@ header {
 
 nav {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     height: 100%;
     list-style: none;

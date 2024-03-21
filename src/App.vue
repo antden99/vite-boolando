@@ -9,6 +9,7 @@ export default {
     AppFooter: AppFooter,
     AppMain: AppMain,
     AppHeader: AppHeader,
+    
   }
 }
 </script>
@@ -17,6 +18,7 @@ export default {
   <AppHeader />
   <AppMain />
   <AppFooter />
+  
 </template>
 
 <style>
