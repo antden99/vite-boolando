@@ -1,6 +1,28 @@
 <script>
 export default {
     name: "AppHeader",
+    data() {
+        return {
+            strings: [],
+            saluto: "ciao"
+        }
+    },
+    methods: {
+        callApi() {
+            for (let i = 0; i < 3; i++) {
+                axios
+                    .get('https://flynn.boolean.careers/exercises/api/random/word')
+                    .then((response) => {
+                        console.log(response.data.response);
+                        this.strings.push(response.data.response)
+                        console.log(this.strings)
+                    })
+            }
+        }
+    },
+    mounted() {
+        this.callApi()
+    }
 }
 </script>
 
@@ -9,9 +31,7 @@ export default {
         <div class="container">
             <nav>
                 <li>
-                    <a href="">Donna</a>
-                    <a href="">Uomo</a>
-                    <a href="">Bambino</a>
+                    <a href="" v-for="string in strings">{{ string }}</a>
                 </li>
                 <li><img src="/assets/img/boolean-logo.png" alt=""></li>
                 <li>
@@ -67,7 +87,7 @@ nav {
 
     & ul {
         display: flex;
-       
+
         & li {
             color: white;
             margin: 10px;
