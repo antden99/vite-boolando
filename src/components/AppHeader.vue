@@ -3,26 +3,32 @@ export default {
     name: "AppHeader",
     data() {
         return {
-            strings: [],
-            saluto: "ciao"
+            strings: [
+                {
+                    nome:"Uomo"
+                },
+                {
+                    nome:"Donna"
+                },
+                {
+                    nome:"Bambino"
+                }
+            ],
+            
+            icons:[
+                {
+                    icon: "fa-solid fa-user"
+                },
+                {
+                    icon: "fa-solid fa-heart"
+                },
+                {
+                    icon: "fa-solid fa-bag-shopping"
+                }
+            ]
         }
     },
-    methods: {
-        callApi() {
-            for (let i = 0; i < 3; i++) {
-                axios
-                    .get('https://flynn.boolean.careers/exercises/api/random/word')
-                    .then((response) => {
-                        console.log(response.data.response);
-                        this.strings.push(response.data.response)
-                        console.log(this.strings)
-                    })
-            }
-        }
-    },
-    mounted() {
-        this.callApi()
-    }
+   
 }
 </script>
 
@@ -31,14 +37,12 @@ export default {
         <div class="container">
             <nav>
                 <li>
-                    <a href="" v-for="string in strings">{{ string }}</a>
+                    <a href="" v-for="string in strings">{{ string.nome }}</a>
                 </li>
                 <li><img src="/assets/img/boolean-logo.png" alt=""></li>
                 <li>
                     <ul>
-                        <li><i class="fa-solid fa-user"></i></li>
-                        <li><i class="fa-solid fa-heart"></i></li>
-                        <li><i class="fa-solid fa-bag-shopping"></i></li>
+                        <li v-for="icon in icons"><i :class="icon.icon"></i></li>                    
                     </ul>
                 </li>
             </nav>
