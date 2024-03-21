@@ -14,7 +14,13 @@ export default {
                     <a href="">Bambino</a>
                 </li>
                 <li><img src="/assets/img/boolean-logo.png" alt=""></li>
-                <li>Antonio2</li>
+                <li>
+                    <ul>
+                        <li><i class="fa-solid fa-user"></i></li>
+                        <li><i class="fa-solid fa-heart"></i></li>
+                        <li><i class="fa-solid fa-bag-shopping"></i></li>
+                    </ul>
+                </li>
             </nav>
         </div>
     </header>
@@ -56,6 +62,15 @@ nav {
 
         & img {
             max-width: 100px;
+        }
+    }
+
+    & ul {
+        display: flex;
+       
+        & li {
+            color: white;
+            margin: 10px;
         }
     }
 }
