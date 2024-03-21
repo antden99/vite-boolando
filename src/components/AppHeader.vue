@@ -8,8 +8,12 @@ export default {
     <header>
         <div class="container">
             <nav>
-                <li>Antonio</li>
-                <li>Logo</li>
+                <li>
+                    <a href="">Donna</a>
+                    <a href="">Uomo</a>
+                    <a href="">Bambino</a>
+                </li>
+                <li><img src="/assets/img/boolean-logo.png" alt=""></li>
                 <li>Antonio2</li>
             </nav>
         </div>
@@ -22,16 +26,37 @@ header {
     background-color: #ff6900;
     height: 100px;
 }
-.container{
+
+.container {
     height: 100%;
     width: 80%;
     margin: auto;
+
 }
 
-nav{
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 100%;
+    list-style: none;
+
+
+    & li {
+        width: 33.3%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        & a {
+            text-decoration: none;
+            color: white;
+            margin: 10px;
+        }
+
+        & img {
+            max-width: 100px;
+        }
+    }
 }
 </style>
