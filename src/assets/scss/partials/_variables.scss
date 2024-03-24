@@ -1,0 +1,7 @@
+ //dopo aver creato la cartella scss all'interno di assets, nella cartella scss creaiamo una cartella partials, ovver
+ //la cartella con all'interno un file che inizia con"_" e con estensione scss, dove inseriamo tutte le variabili che utilizzeremo poi negli altri file, importandole con @use(esempio style.scss)
+$dark-color:black;
+$header-color:#ff6900;
+$discount-color:red;
+$sostenibility-color:green;
+$footer-color:#1a1a1a;

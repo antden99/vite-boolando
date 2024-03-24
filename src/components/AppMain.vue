@@ -38,7 +38,7 @@ export default {
                     price: 184.99,
                     newPrice: 129.99,
                     mouse: false,
-                    
+
                 },
                 {
                     image: "/assets/img/4.webp",
@@ -75,7 +75,8 @@ export default {
                     newPrice: 29.99,
                     mouse: false,
 
-                }
+                },
+                
             ]
         }
     }
@@ -106,79 +107,6 @@ export default {
 
 </template>
 
-<style>
-main {
-    height: calc(100vh - 200px);
-    overflow-y: auto;
+<style >
 
-}
-
-.container {
-    height: 100%;
-    width: 80%;
-    margin: auto;
-    max-width: 1600px;
-}
-
-
-
-img {
-    max-width: 100%;
-}
-
-.product {
-    width: 460px;
-}
-
-.heart_and_discount {
-    position: relative;
-}
-
-.heart {
-    position: absolute;
-    top: 10px;
-    right: 0;
-    background-color: white;
-    font-size: 30px;
-    text-align: center;
-    width: 40px;
-    height: 40px;
-
-}
-
-.discount {
-    position: absolute;
-    bottom: 100px;
-    left: 0;
-    background-color: red;
-
-    text-align: center;
-    color: white;
-}
-
-.green {
-    position: absolute;
-    bottom: 100px;
-    left: 0;
-    background-color: green;
-
-    text-align: center;
-    color: white;
-    left: 15%;
-}
-
-.color_red {
-    color: red;
-}
-
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-}
-
-.col {
-    width: ((100% / 12) * 4);
-}
 </style>

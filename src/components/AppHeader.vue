@@ -53,51 +53,6 @@ export default {
 
 </template>
 
-<style>
-header {
-    background-color: #ff6900;
-    height: 100px;
-    z-index: 1;
-}
+<style >
 
-.container {
-    height: 100%;
-    width: 80%;
-    margin: auto;
-
-}
-
-nav {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    list-style: none;
-
-
-    & li {
-        width: 33.3%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-
-        & a {
-            text-decoration: none;
-            color: white;
-            margin: 10px;
-        }
-
-        & img {
-            max-width: 100px;
-        }
-    }
-
-    & ul {
-        display: flex;
-
-        & li {
-            color: white;
-            margin: 10px;
-        }
-    }
-}
 </style>

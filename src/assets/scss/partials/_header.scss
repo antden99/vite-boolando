@@ -1,0 +1,51 @@
+@use './variables' as *;
+
+header {
+    background-color: $header-color;
+    height: 100px;
+    z-index: 1;
+    width: 100%;
+
+    .container {
+        height: 100%;
+        width: 80%;
+        margin: auto;
+        max-width: 1600px;
+        background-color: green;
+    }
+}
+
+
+nav {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    list-style: none;
+    width: 100%;
+
+    li {
+        width: 33.3%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        a {
+            text-decoration: none;
+            color: white;
+            margin: 10px;
+        }
+
+        img {
+            max-width: 100px;
+        }
+    }
+
+    ul {
+        display: flex;
+
+        li {
+            color: white;
+            margin: 10px;
+        }
+    }
+}

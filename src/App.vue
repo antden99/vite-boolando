@@ -21,16 +21,8 @@ export default {
   
 </template>
 
-<style>
-body {
-  background-color: white;
-  color: black;
-  min-height: 100vh;
+<style >
 
-}
 
-* {
-  padding: 0;
-  margin: 0;
-}
+
 </style>

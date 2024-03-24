@@ -37,39 +37,6 @@ export default {
 
 </template>
 
-<style scoped>
-footer {
-    height: 100px;
-    background-color: #1a1a1a;
-    color: white;
-    z-index: 1;
-}
+<style  scoped lang="scss">
 
-.container {
-    height: 100%;
-    width: 80%;
-    margin: auto;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 100%;
-    list-style: none;
-}
-
-a {
-
-    color: white;
-    margin-right: 15px;
-}
-
-& ul {
-    display: flex;
-    list-style: none;
-
-    & li {
-        color: white;
-        margin: 10px;
-
-    }
-}
 </style>

@@ -1,0 +1,77 @@
+@use './variables' as *;
+
+main {
+    height: calc(100vh - 200px);
+    overflow-y: auto;
+
+    .container {
+        width: 80%;
+        max-width: 1600px;
+        margin: auto;
+
+        .row {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: space-between;
+
+        }
+    }
+}
+
+.col {
+    width: calc((100% / 12) * 4 - 1.5rem);
+
+    img {
+        max-width: 100%;
+    }
+}
+//MEDIA QUERYY FOR COL
+@media screen and (max-width: 920px) {
+    .col {
+        width: calc((100% / 12) * 6 - 1.5rem);
+
+    }
+}
+
+.heart_and_discount {
+    position: relative;
+}
+
+.heart {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    background-color: white;
+    font-size: 30px;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+
+}
+
+.discount {
+    position: absolute;
+    bottom: 100px;
+    left: 0;
+    background-color:$discount-color;
+
+    text-align: center;
+    color: white;
+}
+
+.green {
+    position: absolute;
+    bottom: 100px;
+    left: 0;
+    background-color: $sostenibility-color;
+
+    text-align: center;
+    color: white;
+    left: 15%;
+}
+
+.color_red {
+    color: $discount-color;
+}
