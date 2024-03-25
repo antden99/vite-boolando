@@ -14,6 +14,7 @@ export default {
     data() {
         return {
             cards: cards,
+            cardsList: [],  //dichiaro cardsList come un array vuoto che andò a riempire successivamente
         }
     },
 
@@ -22,6 +23,8 @@ export default {
         axios.get("http://localhost:3000/cards")
             .then(response => {
                 console.log(response)
+
+                this.cardsList=response.data        //recupero cardsList e gli assegno con la chiamata ajax il contenuto di response.data, che sarebbe l'array di oggetti, adesso devo ovviamente andare nel v-for di AppCard e cambiare il recupero dei dati, poichè prima la singola card veniva recuperata da cards (riga 16), adesso invece deve essere recuperata dal nuovo array cardsList e ovviamente per accedervi utilizzo this.cardsList
             })
     }
 }
@@ -32,7 +35,7 @@ export default {
         <div class="container">
             <div class="row">
 
-                <AppCard v-for="card in cards" :name="card.name" :brand="card.brand" :newPrice="card.newPrice"
+                <AppCard v-for="card in this.cardsList" :name="card.name" :brand="card.brand" :newPrice="card.newPrice"
                     :discount="card.discount" :price="card.price" :mouse="card.mouse" :immagine2="card.immagine2"
                     :image="card.image" :sostenibility="card.sostenibility"></AppCard>
 
