@@ -10,7 +10,8 @@
             "sostenibility": true,
             "price": 29.99,
             "newPrice": 14.99,
-            "mouse": false
+            "mouse": false,
+            "visible": false
         },
         {
             "id": 2,
@@ -22,7 +23,8 @@
             "sostenibility": false,
             "price": 29.99,
             "newPrice": 20.99,
-            "mouse": false
+            "mouse": false,
+            "visible": false
         },
         {
             "id": 3,
@@ -34,7 +36,8 @@
             "sostenibility": false,
             "price": 184.99,
             "newPrice": 129.99,
-            "mouse": false
+            "mouse": false,
+            "visible": false
         },
         {
             "id": 4,
@@ -46,7 +49,8 @@
             "sostenibility": true,
             "price": 29.99,
             "newPrice": 14.99,
-            "mouse": false
+            "mouse": false,
+            "visible": false
         },
         {
             "id": 5,
@@ -58,7 +62,8 @@
             "sostenibility": false,
             "price": null,
             "newPrice": 99.99,
-            "mouse": false
+            "mouse": false,
+            "visible": false
         },
         {
             "id": 6,
@@ -70,7 +75,8 @@
             "sostenibility": false,
             "price": null,
             "newPrice": 29.99,
-            "mouse": false
+            "mouse": false,
+            "visible": false
         }
     ]
 }

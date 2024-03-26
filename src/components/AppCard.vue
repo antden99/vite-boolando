@@ -4,11 +4,11 @@
 export default {
     name: "AppCard",
 
-    props: ['brand', "name", "newPrice", "price", "discount", "mouse", "image", "immagine2", "sostenibility"],
+    props: ['brand', "name", "newPrice", "price", "discount", "mouse", "image", "immagine2", "sostenibility","visible"],
 
     methods: {
         showProduct() {
-            this.$emit('showProductCard');
+            this.$emit('showProductCard');  //per far ricevere l'evento al padre(AppMain) utilizzo $emit
         }
     }
 }
@@ -25,6 +25,7 @@ export default {
             <div class="heart">&hearts;</div>
             <div class="discount">{{ discount }}</div>
             <div class="green" v-if="sostenibility">Sostenibilità</div>
+           
         </div>
     </div>
 </template>

@@ -36,9 +36,12 @@ export default {
     },
 
     methods: {
-        ShowProductCard() {
+        ShowProductCard(card) {
             console.log('Ho ricevuto un evento dal componente figlio');
             
+            console.log(card.visible, card)   //mi passo l'oggetto card singolarmente all'interno della funzione per accedere alle sue proprietà e mostrarle nella modale
+            card.visible = true
+            console.log(card.visible)
         }
     }
 
@@ -58,7 +61,7 @@ export default {
                 <AppCard v-for="card in this.state.cardsList_2" :name="card.name" :brand="card.brand"
                     :newPrice="card.newPrice" :discount="card.discount" :price="card.price" :mouse="card.mouse"
                     :immagine2="card.immagine2" :image="card.image" :sostenibility="card.sostenibility"
-                    @showProductCard="ShowProductCard"></AppCard>   <!--AppCard ha in ascolto l'evento showProductCard, appena evocato questo evento, svolge la funzione ShowProductCard dichiarata nei metodi-->
+                    @showProductCard="ShowProductCard(card)"></AppCard>   <!--AppCard ha in ascolto l'evento showProductCard, appena evocato questo evento, svolge la funzione ShowProductCard dichiarata nei metodi-->
 
                 <!--<AppCard v-for="card in cards" :card="card"></AppCard>-->
             </div>
