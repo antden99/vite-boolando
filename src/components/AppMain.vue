@@ -33,7 +33,15 @@ export default {
                 this.cardsList=response.data        //recupero cardsList e gli assegno con la chiamata ajax il contenuto di response.data, che sarebbe l'array di oggetti, adesso devo ovviamente andare nel v-for di AppCard e cambiare il recupero dei dati, poichè prima la singola card veniva recuperata da cards (riga 16), adesso invece deve essere recuperata dal nuovo array cardsList e ovviamente per accedervi utilizzo this.cardsList
             })
             */
+    },
+
+    methods: {
+        ShowProductCard() {
+            console.log('Ho ricevuto un evento dal componente figlio');
+            
+        }
     }
+
 
 }
 </script>
@@ -47,9 +55,10 @@ export default {
 
                 <!--utilizzo this.state.message per accedere alla proprietà dichiarata nel file state.js-->
                 <!--<p>{{ this.state.message }}</p> -->
-                <AppCard v-for="card in this.state.cardsList_2" :name="card.name" :brand="card.brand" :newPrice="card.newPrice"     
-                    :discount="card.discount" :price="card.price" :mouse="card.mouse" :immagine2="card.immagine2"
-                    :image="card.image" :sostenibility="card.sostenibility"></AppCard>
+                <AppCard v-for="card in this.state.cardsList_2" :name="card.name" :brand="card.brand"
+                    :newPrice="card.newPrice" :discount="card.discount" :price="card.price" :mouse="card.mouse"
+                    :immagine2="card.immagine2" :image="card.image" :sostenibility="card.sostenibility"
+                    @showProductCard="ShowProductCard"></AppCard>   <!--AppCard ha in ascolto l'evento showProductCard, appena evocato questo evento, svolge la funzione ShowProductCard dichiarata nei metodi-->
 
                 <!--<AppCard v-for="card in cards" :card="card"></AppCard>-->
             </div>
