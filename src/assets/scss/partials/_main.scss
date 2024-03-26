@@ -105,4 +105,12 @@ main {
     border-radius: 5px;
     margin-top: 5px;
     border: none;
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.pointer_hover{
+    cursor: pointer;
 }
