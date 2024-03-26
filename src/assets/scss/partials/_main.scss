@@ -96,3 +96,13 @@ main {
         
     }
 }
+
+.my_btn{
+    width: 30px;
+    aspect-ratio: 1;
+    background-color:$header-color;
+    color: white;
+    border-radius: 5px;
+    margin-top: 5px;
+    border: none;
+}

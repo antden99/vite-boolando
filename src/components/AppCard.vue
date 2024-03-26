@@ -33,6 +33,7 @@ export default {
                 <p>{{ price }}</p>
                 <p>{{ "discounted: "+ newPrice }}</p>
                 <p>{{ "discount: "+ discount }}</p>
+                <div><button class="my_btn"><i class="fa-solid fa-x"></i></button></div>
             </div>
         </div>
     </div>
