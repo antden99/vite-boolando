@@ -60,7 +60,7 @@ export default {
                 <!--<p>{{ this.state.message }}</p> -->
                 <AppCard v-for="card in this.state.cardsList_2" :name="card.name" :brand="card.brand"
                     :newPrice="card.newPrice" :discount="card.discount" :price="card.price" :mouse="card.mouse"
-                    :immagine2="card.immagine2" :image="card.image" :sostenibility="card.sostenibility"
+                    :immagine2="card.immagine2" :image="card.image" :sostenibility="card.sostenibility" :visible=card.visible
                     @showProductCard="ShowProductCard(card)"></AppCard>   <!--AppCard ha in ascolto l'evento showProductCard, appena evocato questo evento, svolge la funzione ShowProductCard dichiarata nei metodi-->
 
                 <!--<AppCard v-for="card in cards" :card="card"></AppCard>-->
