@@ -87,13 +87,18 @@ main {
     position: absolute;
     bottom: 50%;
     left: 130px;
-    
-    
+    display: flex;
+    align-items: center;
+    gap: 10px;
 
     p{
         border: 1px solid;
         padding: 5px;
-        
+        height: 55px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
@@ -113,4 +118,14 @@ main {
 
 .pointer_hover{
     cursor: pointer;
+}
+
+.left{
+    img{
+        max-width: 100px;
+    }
+}
+
+.right{
+    
 }
