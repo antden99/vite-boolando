@@ -3,12 +3,13 @@ import AppCard from './AppCard.vue'
 import { cards } from '../data.js'
 import axios from 'axios'       //importa axios da axios, ma ovviamente per farlo, nel terminale digiti npm i(alias per install) axios
 import { state } from '../state.js'   //importo la costante state, con named import e quindi le {} per poi utilizzarla successivamente
+import AppModale from './AppModale.vue'
 
 export default {
     name: "AppMain",
-
     components: {
         AppCard: AppCard,
+        AppModale: AppModale,
     },
 
     data() {
@@ -16,6 +17,8 @@ export default {
             cards: cards,
             cardsList: [],  //dichiaro cardsList come un array vuoto che andò a riempire successivamente
             state: state,    //alla proprietà state assegno state, che sarebbe la costante importata
+            modaleAperta: false,
+            contenutoModale: null,
         }
     },
 
@@ -38,14 +41,21 @@ export default {
     methods: {
         ShowProductCard(card) {
             //console.log('Ho ricevuto un evento dal componente figlio');
-            
+
             //console.log(card.visible, card)   //mi passo l'oggetto card singolarmente all'interno della funzione per accedere alle sue proprietà e mostrarle nella modale
             card.visible = true
             //console.log(card.visible)
         },
-        closeModel(card){
-            card.visible= false
-        }
+        closeModel() {
+            this.modaleAperta = false
+        },
+        openModal(card) {
+            //console.log(card)
+            //console.log(this.modaleAperta)
+            this.modaleAperta=true
+            //console.log(this.modaleAperta)
+            this.contenutoModale = card
+        },
 
     }
 
@@ -64,9 +74,11 @@ export default {
                 <!--<p>{{ this.state.message }}</p> -->
                 <AppCard v-for="card in this.state.cardsList_2" :name="card.name" :brand="card.brand"
                     :newPrice="card.newPrice" :discount="card.discount" :price="card.price" :mouse="card.mouse"
-                    :immagine2="card.immagine2" :image="card.image" :sostenibility="card.sostenibility" :visible=card.visible
-                    @showProductCard="ShowProductCard(card)" @closeModelCard="closeModel(card)"></AppCard>   <!--AppCard ha in ascolto l'evento showProductCard, appena evocato questo evento, svolge la funzione ShowProductCard dichiarata nei metodi-->
-
+                    :immagine2="card.immagine2" :image="card.image" :sostenibility="card.sostenibility"
+                    :visible=card.visible @showProductCard="openModal(card)" @closeModelCard="closeModel">
+                </AppCard>
+                <!--AppCard ha in ascolto l'evento showProductCard, appena evocato questo evento, svolge la funzione ShowProductCard dichiarata nei metodi-->
+                <AppModale v-if="modaleAperta === true" :cardData = "contenutoModale" @closeModelCard="closeModel"></AppModale>
                 <!--<AppCard v-for="card in cards" :card="card"></AppCard>-->
             </div>
         </div>
@@ -74,4 +86,14 @@ export default {
 
 </template>
 
-<style></style>
+<style>
+</style>
+
+
+<!--1) creo un componente AppModale a cui passo come props cardData e lo dichiaro come un oggetto
+    2) all'interno di AppModale, utilizzo cardData."..." per definire tutte le proprietà che potrà utilizzare
+    3) all'interno di AppMain, dichiaro due proprietà: modaleAperta e contenutoModale, la prima verrà aggiornata tramite evento 
+        per aprire e chiudere la modale, la seconda invece, dichiarata inizialmente vuota, viene riempita all'interno della funzione openModal,
+        con l'intero conenuto della card, in modo tale, che successivamente, conterrà dinamicamente i dati della card che è stata selezionata volta per volta.
+    4) sul componente AppModale, inserisco una direttiva v-if, che controlla se la modale è aperta, e assegno tramite props a cardData, precedentemente dichiarato oggetto, il contenuto di "contenutoModale
+    5) così facendo, ogni qual volta si clicca la modale, il suo contenuto cambia."-->

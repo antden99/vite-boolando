@@ -1,0 +1,51 @@
+@use './variables' as *;
+
+.modale {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    position: absolute;  
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    p {
+        border: 1px solid;
+        padding: 5px;
+        height: 55px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.my_btn {
+    width: 30px;
+    aspect-ratio: 1;
+    background-color: $header-color;
+    color: white;
+    border-radius: 5px;
+    margin-top: 5px;
+    border: none;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.pointer_hover {
+    cursor: pointer;
+}
+
+.left {
+    img {
+        max-width: 100px;
+    }
+}

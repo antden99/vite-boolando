@@ -10,9 +10,6 @@ export default {
         showProduct() {
             this.$emit('showProductCard');  //per far ricevere l'evento al padre(AppMain) utilizzo $emit
         },
-        closeModel() {
-            this.$emit('closeModelCard');
-        },
 
     }
 }
@@ -29,21 +26,7 @@ export default {
             <s>{{ price }}&euro;</s>
             <div class="heart">&hearts;</div>
             <div class="discount">{{ discount }}</div>
-            <div class="green" v-if="sostenibility">Sostenibilità</div>
-            <div v-if="visible" class="modale">
-                <div class="left">
-                    <div><img :src="image" alt=""></div>
-                    <div><img :src="immagine2" alt=""></div>
-                </div>
-                <div class="right">
-                    <p>{{ name }}</p>
-                    <p>{{ brand }}</p>
-                    <p>{{ price }}</p>
-                    <p>{{ "discounted: " + newPrice }}</p>
-                    <p>{{ "discount: " + discount }}</p>
-                    <div @click="closeModel"><button class="my_btn"><i class="fa-solid fa-x"></i></button></div>
-                </div>
-            </div>
+            <div class="green" v-if="sostenibility">Sostenibilità</div>         
         </div>
     </div>
 </template>
