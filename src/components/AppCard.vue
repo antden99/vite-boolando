@@ -1,15 +1,36 @@
 <script>
-
+import AppModale from './AppModale.vue'
 
 export default {
     name: "AppCard",
 
-    props: ['brand', "name", "newPrice", "price", "discount", "mouse", "image", "immagine2", "sostenibility", "visible"],
+    components: {
+
+        AppModale: AppModale,
+    },
+
+    data() {
+        return {
+            modaleAperta: false,
+            contenutoModale: null,
+        }
+    },
+    props: {
+        card:Object,
+    },
 
     methods: {
-        showProduct() {
-            this.$emit('showProductCard');  //per far ricevere l'evento al padre(AppMain) utilizzo $emit
+        showProduct(card) {
+            this.modaleAperta = true;
+            console.log(this.modaleAperta);
+
+            this.contenutoModale= card
         },
+
+        closeModel() {
+            this.modaleAperta = false
+        },
+        
 
     }
 }
@@ -17,16 +38,18 @@ export default {
 
 <template>
     <div class="col">
-        <div class="product heart_and_discount img1" @mouseover="mouse = true" @mouseout="mouse = false">
-            <img :src="mouse ? image : immagine2" class="default_image" alt="">
-            <span>{{ brand }}</span>
-            <div @click="showProduct" class="pointer_hover"><strong>{{ name }}</strong></div>
+        <div class="product heart_and_discount img1" @mouseover="card.mouse = true" @mouseout="card.mouse = false">
+            <img :src="card.mouse ? card.image : card.immagine2" class="default_image" alt="">
+            <span>{{ card.brand }}</span>
+            <div @click="showProduct(card)" class="pointer_hover"><strong>{{ card.name }}</strong></div>
             <!--al' evento click si attiva la funzione showproduct che emette un evento chiamato showProductCard che viene recepito dal componente padre in AppMain.vue-->
-            <div class=color_red>{{ newPrice }}&euro;</div>
-            <s>{{ price }}&euro;</s>
+            <div class=color_red>{{ card.newPrice }}&euro;</div>
+            <s>{{ card.price }}&euro;</s>
             <div class="heart">&hearts;</div>
-            <div class="discount">{{ discount }}</div>
-            <div class="green" v-if="sostenibility">Sostenibilità</div>         
+            <div class="discount">{{ card.discount }}</div>
+            <div class="green" v-if="card.sostenibility">Sostenibilità</div>
+
+            <AppModale v-if="modaleAperta === true" :cardData = "contenutoModale" @closeModelCard="closeModel"></AppModale>
         </div>
     </div>
 </template>

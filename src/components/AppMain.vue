@@ -3,13 +3,12 @@ import AppCard from './AppCard.vue'
 import { cards } from '../data.js'
 import axios from 'axios'       //importa axios da axios, ma ovviamente per farlo, nel terminale digiti npm i(alias per install) axios
 import { state } from '../state.js'   //importo la costante state, con named import e quindi le {} per poi utilizzarla successivamente
-import AppModale from './AppModale.vue'
+
 
 export default {
     name: "AppMain",
     components: {
         AppCard: AppCard,
-        AppModale: AppModale,
     },
 
     data() {
@@ -17,8 +16,6 @@ export default {
             cards: cards,
             cardsList: [],  //dichiaro cardsList come un array vuoto che andò a riempire successivamente
             state: state,    //alla proprietà state assegno state, che sarebbe la costante importata
-            modaleAperta: false,
-            contenutoModale: null,
         }
     },
 
@@ -38,28 +35,6 @@ export default {
             */
     },
 
-    methods: {
-        ShowProductCard(card) {
-            //console.log('Ho ricevuto un evento dal componente figlio');
-
-            //console.log(card.visible, card)   //mi passo l'oggetto card singolarmente all'interno della funzione per accedere alle sue proprietà e mostrarle nella modale
-            card.visible = true
-            //console.log(card.visible)
-        },
-        closeModel() {
-            this.modaleAperta = false
-        },
-        openModal(card) {
-            //console.log(card)
-            //console.log(this.modaleAperta)
-            this.modaleAperta=true
-            //console.log(this.modaleAperta)
-            this.contenutoModale = card
-        },
-
-    }
-
-
 }
 </script>
 
@@ -72,13 +47,10 @@ export default {
 
                 <!--utilizzo this.state.message per accedere alla proprietà dichiarata nel file state.js-->
                 <!--<p>{{ this.state.message }}</p> -->
-                <AppCard v-for="card in this.state.cardsList_2" :name="card.name" :brand="card.brand"
-                    :newPrice="card.newPrice" :discount="card.discount" :price="card.price" :mouse="card.mouse"
-                    :immagine2="card.immagine2" :image="card.image" :sostenibility="card.sostenibility"
-                    :visible=card.visible @showProductCard="openModal(card)" @closeModelCard="closeModel">
+                <AppCard v-for="card in this.state.cardsList_2" :card="card">
                 </AppCard>
                 <!--AppCard ha in ascolto l'evento showProductCard, appena evocato questo evento, svolge la funzione ShowProductCard dichiarata nei metodi-->
-                <AppModale v-if="modaleAperta === true" :cardData = "contenutoModale" @closeModelCard="closeModel"></AppModale>
+               
                 <!--<AppCard v-for="card in cards" :card="card"></AppCard>-->
             </div>
         </div>
